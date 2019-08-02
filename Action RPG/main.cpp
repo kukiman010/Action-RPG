@@ -5,6 +5,5 @@ int main()
 {
 	Play p;
 	
-
 	return 0;
 }
