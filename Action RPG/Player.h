@@ -9,6 +9,7 @@ private:
 	float dx, dy, speed;
 	float x, y;
 	Texture texture;
+	float CurrentFrame;
 public:
 	Sprite sprite;
 	string direction;
@@ -17,6 +18,7 @@ public:
 	void motion(string b, float time);
 	float pl_x();
 	float pl_y();
+	void animation(float time);
 	~Player();
 };
 

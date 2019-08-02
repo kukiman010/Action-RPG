@@ -2,6 +2,8 @@
 
 #include "Libres.h"
 #include "Player.h"
+#include "locations.h"
+#include "view.h"
 
 class Play
 {
