@@ -17,3 +17,9 @@
 using namespace std;
 //using namespace boost;
 using namespace sf;
+
+namespace win_info
+{
+	const int width = 400;
+	const int height = 300;
+}

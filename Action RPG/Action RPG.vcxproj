@@ -115,18 +115,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="fps_counter.cpp" />
     <ClCompile Include="locations.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Play.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="view.cpp" />
+    <ClCompile Include="window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="fps_counter.h" />
     <ClInclude Include="Libres.h" />
     <ClInclude Include="locations.h" />
     <ClInclude Include="Play.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="view.h" />
+    <ClInclude Include="window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
