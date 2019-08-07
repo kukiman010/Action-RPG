@@ -1,15 +1,25 @@
 #include "Play.h"
 
-
-
 Play::Play()
 {
 	Player pl("player.png",60,60);
 	locations map("floor.png");
-
 	view vi(win_info::width, win_info::height);
 	
 
+	boost::asio::ip::udp::resolver resolver(io_service);
+	boost::asio::ip::udp::resolver::query query("127.0.0.1", "80");
+	remote_endpoint_ = *resolver.resolve(query);
+
+	ptree root;
+	root.put("type", "connection");
+
+	std::ostringstream buf;
+	write_json(buf, root, false);
+	std::string data = buf.str();
+
+	sock_.open(boost::asio::ip::udp::v4());
+	sock_.send_to(boost::asio::buffer(data), remote_endpoint_);
 
 	while (window.isOpen())
 	{
@@ -68,6 +78,9 @@ Play::Play()
 		window.draw(pl.sprite);
 		window.setView(vi.vi);
 		window.update();
+
+
+		io_service.poll();
 	}
 }
 
